@@ -114,6 +114,7 @@ resetLoopButton.addEventListener("click", () => {
 
 previousButton.addEventListener("click", () => {
   position--;
+  resetCover();
   chooseSong();
   changeState();
 });
@@ -133,6 +134,7 @@ pauseButton.addEventListener("click", () => {
 
 nextButton.addEventListener("click", () => {
   position++;
+  resetCover();
   chooseSong();
   changeState();
 });
@@ -147,6 +149,7 @@ closePlaylistButton.addEventListener("click", () => {
 
 audio.onended = () => {
   position++;
+  resetCover();
   chooseSong();
 };
 
@@ -181,6 +184,11 @@ progressBarContainer.addEventListener("click", (e) => {
   let progressWidth = e.offsetX;
   audio.currentTime = (progressWidth / totalWidth) * audio.duration;
 });
+
+const resetCover = () => {
+  cover.src = "";
+  cover.alt = "";
+};
 
 const chooseSong = () => {
   if (position < 0) {
@@ -238,6 +246,7 @@ for (let i = 0; i < myPlaylist.length; i++) {
     pauseButton.style.display = "flex";
 
     position = myPlaylistItem.id;
+    resetCover();
     chooseSong();
     changeState();
 
