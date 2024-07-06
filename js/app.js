@@ -154,10 +154,10 @@ audio.onended = () => {
 };
 
 audio.addEventListener("timeupdate", (e) => {
-  let percentage = (e.target.currentTime / e.target.duration) * 100;
+  const percentage = (e.target.currentTime / e.target.duration) * 100;
   progressBar.style.width = `${percentage}%`;
 
-  let currentMin = Math.floor(e.target.currentTime / 60);
+  const currentMin = Math.floor(e.target.currentTime / 60);
   let currentSec = Math.floor(e.target.currentTime % 60);
 
   if (currentSec < 10) {
@@ -168,7 +168,7 @@ audio.addEventListener("timeupdate", (e) => {
 });
 
 audio.addEventListener("loadeddata", () => {
-  let totalMin = Math.floor(audio.duration / 60);
+  const totalMin = Math.floor(audio.duration / 60);
   let totalSec = Math.floor(audio.duration % 60);
 
   if (totalSec < 10) {
@@ -180,8 +180,8 @@ audio.addEventListener("loadeddata", () => {
 });
 
 progressBarContainer.addEventListener("click", (e) => {
-  let totalWidth = progressBarContainer.offsetWidth;
-  let progressWidth = e.offsetX;
+  const totalWidth = progressBarContainer.offsetWidth;
+  const progressWidth = e.offsetX;
   audio.currentTime = (progressWidth / totalWidth) * audio.duration;
 });
 
@@ -254,12 +254,13 @@ for (let i = 0; i < myPlaylist.length; i++) {
   });
 
   playlistItemAudio.addEventListener("loadeddata", () => {
-    let totalMin = Math.floor(playlistItemAudio.duration / 60);
+    const totalMin = Math.floor(playlistItemAudio.duration / 60);
     let totalSec = Math.floor(playlistItemAudio.duration % 60);
 
     if (totalSec < 10) {
       totalSec = `0${totalSec}`;
     }
+
     playlistItemDuration.textContent = `${totalMin}:${totalSec}`;
   });
 }
