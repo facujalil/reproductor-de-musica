@@ -265,7 +265,7 @@ for (let i = 0; i < myPlaylist.length; i++) {
   });
 }
 
-function markPlaylistItem() {
+const markPlaylistItem = () => {
   const playlistItem = document.querySelectorAll(".playlist-item");
 
   for (let i = 0; i < playlistItem.length; i++) {
@@ -279,8 +279,8 @@ function markPlaylistItem() {
 
     playlistItem[i].setAttribute("onclick", "clicked()");
   }
-}
+};
 
-function clicked() {
+const clicked = () => {
   markPlaylistItem();
-}
+};
