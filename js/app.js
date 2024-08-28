@@ -1,73 +1,39 @@
 const myPlaylist = [
   {
-    id: 0,
-    cover: "img/Babasónicos - Portada.jpg",
-    song: "Como Eran Las Cosas",
-    artist: "Babasónicos",
-    audio: "audio/Como Eran Las Cosas - Babasónicos.mp3",
+    cover: "img/cover-1.jpg",
+    song: "Dreaming On",
+    artist: "NEFFEX",
+    audio: "audio/Dreaming On - NEFFEX.mp3",
   },
   {
-    id: 1,
-    cover: "img/Los Piojos - Portada.jpg",
-    song: "Desde Lejos No Se Ve",
-    artist: "Los Piojos",
-    audio: "audio/Desde Lejos No Se Ve - Los Piojos.mp3",
+    cover: "img/cover-2.jpg",
+    song: "Seasons",
+    artist: "Telecasted",
+    audio: "audio/Seasons - Telecasted.mp3",
   },
   {
-    id: 2,
-    cover: "img/Las Pastillas Del Abuelo - Portada.jpg",
-    song: "¿Qué Es Dios?",
-    artist: "Las Pastillas Del Abuelo",
-    audio: "audio/Qué Es Dios - Las Pastillas Del Abuelo.mp3",
+    cover: "img/cover-3.jpg",
+    song: "Serenity",
+    artist: "Lish Grooves",
+    audio: "audio/Serenity - Lish Grooves.mp3",
   },
   {
-    id: 3,
-    cover: "img/Los Redondos - Portada.jpg",
-    song: "Esa Estrella Era Mi Lujo",
-    artist: "Los Redondos",
-    audio: "audio/Esa Estrella Era Mi Lujo - Los Redondos.mp3",
+    cover: "img/cover-4.jpg",
+    song: "Kurt",
+    artist: "Cheel",
+    audio: "audio/Kurt - Cheel.mp3",
   },
   {
-    id: 4,
-    cover: "img/Divididos - Portada.jpg",
-    song: "Qué Ves?",
-    artist: "Divididos",
-    audio: "audio/Qué Ves - Divididos.mp3",
+    cover: "img/cover-5.jpg",
+    song: "Don't Steal My Heart",
+    artist: "Everet Almond",
+    audio: "audio/Don't Steal My Heart - Everet Almond.mp3",
   },
   {
-    id: 5,
-    cover: "img/La Vela Puerca - Portada.jpg",
-    song: "El Viejo",
-    artist: "La Vela Puerca",
-    audio: "audio/El Viejo - La Vela Puerca.mp3",
-  },
-  {
-    id: 6,
-    cover: "img/Bersuit Vergarabat - Portada.jpg",
-    song: "La Soledad",
-    artist: "Bersuit Vergarabat",
-    audio: "audio/La Soledad - Bersuit Vergarabat.mp3",
-  },
-  {
-    id: 7,
-    cover: "img/Gustavo Cerati - Portada.jpg",
-    song: "Deja Vu",
-    artist: "Gustavo Cerati",
-    audio: "audio/Deja Vu - Gustavo Cerati.mp3",
-  },
-  {
-    id: 8,
-    cover: "img/Andrés Calamaro - Portada.jpg",
-    song: "Cuando No Estás",
-    artist: "Andrés Calamaro",
-    audio: "audio/Cuando No Estás - Andrés Calamaro.mp3",
-  },
-  {
-    id: 9,
-    cover: "img/Fito Páez - Portada.jpg",
-    song: "Fue Amor",
-    artist: "Fito Páez",
-    audio: "audio/Fue Amor - Fito Páez.mp3",
+    cover: "img/cover-6.jpg",
+    song: "Uh Oh",
+    artist: "Slynk",
+    audio: "audio/Uh Oh - Slynk.mp3",
   },
 ];
 
@@ -189,7 +155,6 @@ const chooseSong = () => {
     position = 0;
   }
   cover.src = myPlaylist[position].cover;
-  cover.alt = myPlaylist[position].cover.split("/")[1].split(".")[0];
   song.textContent = myPlaylist[position].song;
   artist.textContent = myPlaylist[position].artist;
   audio.src = myPlaylist[position].audio;
@@ -237,7 +202,7 @@ for (let i = 0; i < myPlaylist.length; i++) {
     playButton.style.display = "none";
     pauseButton.style.display = "flex";
 
-    position = myPlaylistItem.id;
+    position = i;
     chooseSong();
     changeState();
 
