@@ -231,11 +231,5 @@ const markPlaylistItem = () => {
     if (i === position) {
       playlistItem[i].classList.add("current-position");
     }
-
-    playlistItem[i].setAttribute("onclick", "clicked()");
   }
-};
-
-const clicked = () => {
-  markPlaylistItem();
 };
