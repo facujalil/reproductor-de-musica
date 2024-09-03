@@ -173,7 +173,6 @@ const changeState = () => {
 for (let i = 0; i < myPlaylist.length; i++) {
   const playlistItem = document.createElement("li");
   playlistItem.classList.add("playlist-item");
-  playlistItem.id = i;
 
   const playlistItemSong = document.createElement("h4");
 
@@ -229,7 +228,7 @@ const markPlaylistItem = () => {
       playlistItem[i].classList.remove("current-position");
     }
 
-    if (Number(playlistItem[i].id) === position) {
+    if (i === position) {
       playlistItem[i].classList.add("current-position");
     }
 
