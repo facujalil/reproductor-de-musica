@@ -221,15 +221,15 @@ for (let i = 0; i < myPlaylist.length; i++) {
 }
 
 const markPlaylistItem = () => {
-  const playlistItem = document.querySelectorAll(".playlist-item");
+  const playlistItems = document.querySelectorAll(".playlist-item");
 
-  for (let i = 0; i < playlistItem.length; i++) {
-    if (playlistItem[i].classList.contains("current-position")) {
-      playlistItem[i].classList.remove("current-position");
+  for (let i = 0; i < playlistItems.length; i++) {
+    if (playlistItems[i].classList.contains("current-position")) {
+      playlistItems[i].classList.remove("current-position");
     }
 
     if (i === position) {
-      playlistItem[i].classList.add("current-position");
+      playlistItems[i].classList.add("current-position");
     }
   }
 };
